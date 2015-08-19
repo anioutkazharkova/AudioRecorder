@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14dp"
+        android:text="@string/file_be_saved"
+        ></TextView>
+    <TextView
+        android:layout_margin="5dp"
+        android:id="@+id/tvCollectionName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:text="Main"
+        ></TextView>
+    <TextView
+        android:text="@string/enter_name"
+        android:textSize="14dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/etName"
+        android:textSize="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="16dp"
+            android:gravity="center"
+            android:id="@+id/btnOk"
+            android:text="@string/ok"
+            android:textAllCaps="true"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp" />
+        <View
+            android:layout_width="2dp"
+            android:layout_height="40dp"
+            android:background="#c0c0c0"
+            ></View>
+        <TextView
+            android:textSize="16dp"
+            android:gravity="center"
+            android:id="@+id/btnCancel"
+            android:text="@string/cancel"
+            android:textAllCaps="true"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp" />
+    </LinearLayout>
+
+
+</LinearLayout>

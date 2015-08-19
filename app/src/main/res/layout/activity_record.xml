@@ -1,0 +1,106 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.azharkova.writemesound.RecordActivity">
+
+   <com.azharkova.writemesound.RobotoCondensedLightTextView
+       android:id="@+id/tvTime"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:textSize="80dp"
+       android:text="00:00:00"
+       android:layout_marginTop="60dp"
+       android:layout_centerHorizontal="true"
+       ></com.azharkova.writemesound.RobotoCondensedLightTextView>
+
+    <RelativeLayout
+
+        android:layout_marginTop="40dp"
+        android:id="@+id/recordFrame"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tvTime"
+        android:layout_width="60dp"
+        android:layout_height="60dp">
+    <ImageView
+        android:background="@drawable/image_states_round"
+        android:id="@+id/btnRecordFrame"
+        android:src="@drawable/button_frame"
+        android:scaleType="fitCenter"
+        android:layout_width="60dp"
+        android:layout_height="60dp"/>
+    <ImageView
+
+        android:layout_centerInParent="true"
+        android:id="@+id/btnRecord"
+        android:src="@drawable/record_button"
+        android:scaleType="fitCenter"
+        android:layout_width="35dp"
+        android:layout_height="35dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:background="@drawable/image_states_round"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/tvTime"
+        android:layout_toLeftOf="@+id/recordFrame"
+        android:layout_marginRight="25dp"
+        android:id="@+id/pauseFrame"
+        android:layout_width="60dp"
+        android:layout_height="60dp">
+    <ImageView
+        android:background="@drawable/image_states_round"
+        android:id="@+id/btnPauseFrame"
+        android:src="@drawable/button_frame"
+        android:layout_centerInParent="true"
+        android:scaleType="fitCenter"
+        android:layout_width="60dp"
+        android:layout_height="60dp"/>
+    <ImageView
+        android:background="@drawable/image_button_states"
+        android:id="@+id/btnPause"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_stop_black_24dp"
+        android:scaleType="fitCenter"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:background="@drawable/image_states_round"
+        android:layout_toRightOf="@+id/recordFrame"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="40dp"
+        android:id="@+id/playFrame"
+        android:layout_below="@+id/tvTime"
+        android:layout_width="60dp"
+        android:layout_height="60dp">
+        <ImageView
+            android:background="@drawable/image_states_round"
+            android:id="@+id/btnPlayFrame"
+            android:src="@drawable/button_frame"
+            android:layout_centerInParent="true"
+            android:scaleType="fitCenter"
+            android:layout_width="60dp"
+            android:layout_height="60dp"/>
+        <ImageView
+            android:background="@drawable/image_states_round"
+            android:id="@+id/btnPlay"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_play_arrow_black_24dp"
+            android:scaleType="fitCenter"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+    </RelativeLayout>
+<com.azharkova.writemesound.RobotoCondensedTextView
+    android:gravity="center_horizontal"
+    android:layout_gravity="center_horizontal"
+    android:layout_centerHorizontal="true"
+    android:textSize="16dp"
+    android:id="@+id/tvStatus"
+    android:layout_marginTop="300dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+
+</RelativeLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:id="@+id/layout"
+    android:background="@drawable/image_button_states"
+
+    >
+    <com.azharkova.writemesound.RobotoCondensedTextView
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:text="Pref"
+        android:id="@+id/tvPrefName"
+        android:textSize="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <com.azharkova.writemesound.RobotoCondensedTextView
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp"
+        android:text="Value"
+        android:layout_gravity="bottom"
+        android:id="@+id/tvPrefValue"
+        android:textSize="14dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+<View
+    android:layout_width="match_parent"
+    android:layout_height="2dp"
+    android:background="#c0c0c0"
+    ></View>
+</LinearLayout>

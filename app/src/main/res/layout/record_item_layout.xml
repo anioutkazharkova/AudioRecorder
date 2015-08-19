@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+   android:layout_width="match_parent"
+    android:layout_height="80dp"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+    android:padding="10dp">
+        <ImageView
+            android:background="@drawable/image_states_round"
+            android:src="@drawable/ic_play_circle_outline_black_36dp"
+            android:scaleType="fitCenter"
+            android:id="@+id/btnPlayRecord"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="20dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <LinearLayout
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.azharkova.writemesound.RobotoCondensedTextView
+    android:ellipsize="end"
+android:lines="1"
+    android:maxLines="1"
+    android:text="Name"
+
+    android:textSize="16dp"
+    android:id="@+id/tvName"
+    android:layout_weight="1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+            <com.azharkova.writemesound.RobotoCondensedTextView
+            android:layout_gravity="right|bottom"
+            android:gravity="right|bottom"
+            android:id="@+id/tvDuration"
+
+            android:text="1:00"
+
+            android:textSize="14dp"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+        <com.azharkova.writemesound.RobotoCondensedTextView
+
+        android:text="12.01.1001"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:textSize="13dp"
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+        <com.azharkova.writemesound.RobotoCondensedTextView
+        android:layout_marginLeft="50dp"
+        android:id="@+id/tvCollectionName"
+        android:layout_marginTop="40dp"
+        android:text="Collection"
+        android:layout_alignParentLeft="true"
+        android:textSize="14dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    </RelativeLayout>
+</LinearLayout>

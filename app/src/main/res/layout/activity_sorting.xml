@@ -1,0 +1,33 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.azharkova.writemesound.SortingActivity">
+<RadioGroup
+    android:id="@+id/rgSorting"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RadioButton
+        android:textSize="16dp"
+        android:id="@+id/rbNameSort"
+        android:text="@string/name_sort"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <RadioButton
+        android:textSize="16dp"
+        android:id="@+id/rbDateSort"
+        android:text="@string/date_sort"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <RadioButton
+        android:textSize="16dp"
+        android:id="@+id/rbCollectionNameSort"
+        android:text="@string/collection_sort"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RadioGroup>
+
+</RelativeLayout>

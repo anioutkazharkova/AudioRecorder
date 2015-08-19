@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.azharkova.writemesound.PlayRecordActivity">
+
+    <com.azharkova.writemesound.RobotoCondensedTextView
+            android:id="@+id/tvFileLabel"
+            android:layout_marginTop="5dp"
+            android:textSize="15dp"
+            android:text="@string/file_name" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    <com.azharkova.writemesound.RobotoCondensedTextView
+        android:layout_marginLeft="5dp"
+        android:id="@+id/tvName"
+        android:layout_below="@+id/tvFileLabel"
+        android:textSize="17dp"
+        android:text="File" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/equalizerLayout"
+        android:layout_marginTop="55dp"
+
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp" />
+    <com.azharkova.writemesound.RobotoCondensedTextView
+        android:id="@+id/tvCurrentTime"
+        android:text="00:00"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="270dp"
+        android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <com.azharkova.writemesound.RobotoCondensedTextView
+        android:id="@+id/tvDuration"
+        android:text="00:00"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="270dp"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <SeekBar
+        android:id="@+id/seekbar"
+        android:layout_marginTop="280dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:background="@drawable/image_states_round"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_play_circle_outline_black_36dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/seekbar"
+        android:layout_marginTop="5dp"
+        android:id="@+id/btnPlay"
+        android:layout_width="60dp"
+        android:layout_height="60dp" />
+
+
+</RelativeLayout>

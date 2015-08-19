@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">Write Me Sound!</string>
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_record">Create record</string>
+
+    <string name="hello_world">Hello world!</string>
+
+
+    <string-array name="sections">
+        <item>All records</item>
+        <item>Collections</item>
+        <item>Settings</item>
+    </string-array>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_collection_records">Collection records</string>
+    <string name="title_activity_record_info">Record information</string>
+    <string name="title_activity_play_record">Play record</string>
+    <string name="title_activity_record_settings">Record settings</string>
+
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="move_file">Move file</string>
+    <string name="select_collection">Select new collection</string>
+    <string name="save_as">Save record as</string>
+    <string name="file_be_saved">File will be saved into:</string>
+    <string name="enter_name">Enter a name:</string>
+    <string name="enter_new_name">Enter new name:</string>
+    <string name="current_name">Current name:</string>
+    <string name="record_name">Record name:</string>
+    <string name="remove_file">Remove file</string>
+    <string name="confirm_remove">Do you really want to remove this file?</string>
+    <string name="select_action">Select action</string>
+    <string name="rename">Rename</string>
+    <string name="move">Move</string>
+    <string name="delete">Delete</string>
+    <string name="new_name">New file name</string>
+    <string name="records">records</string>
+    <string name="done">Done</string>
+
+    <string name="recording">Recording sound...</string>
+    <string name="stop_must_save">Recording stopped. Dont forget SAVE a record</string>
+    <string name="play_must_save">Playing recorded sound. Dont forget SAVE a record</string>
+    <string name="file_already_saved">Record has already been saved</string>
+    <string name="attention">Attention</string>
+    <string name="play_stopped">Playing stopped. Dont forget to SAVE a record</string>
+
+    <string name="bitrate">Select bitrate</string>
+    <string name="format">Select audio format</string>
+    <string name="channel">Select channel mode</string>
+    <string name="audio_format_label">Audio format</string>
+    <string name="bitrate_label">Bit rate</string>
+    <string name="channel_label">Channel mode</string>
+    <string name="new_record">New record</string>
+    <string name="sort">Sorting</string>
+    <string name="search">Search</string>
+    <string name="title_activity_sorting">Sorting parameters</string>
+    <string name="name_sort">Sorting by name</string>
+    <string name="date_sort">Sorting by date</string>
+    <string name="collection_sort">Sorting by collection</string>
+    <string name="file_name">File:</string>
+    <string name="about_text">ab</string>
+</resources>
