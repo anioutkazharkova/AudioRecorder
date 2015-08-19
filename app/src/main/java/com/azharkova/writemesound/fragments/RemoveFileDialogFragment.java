@@ -1,4 +1,4 @@
-package com.azharkova.writemesound;
+package com.azharkova.writemesound.fragments;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -6,7 +6,9 @@ import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
 
-import java.io.File;
+import com.azharkova.writemesound.data.FileManager;
+import com.azharkova.writemesound.IRefreshable;
+import com.azharkova.writemesound.R;
 
 /**
  * Created by azharkova on 03.08.2015.

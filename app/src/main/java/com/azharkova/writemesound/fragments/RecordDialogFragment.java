@@ -1,7 +1,6 @@
-package com.azharkova.writemesound;
+package com.azharkova.writemesound.fragments;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.app.DialogFragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,9 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.io.File;
+import com.azharkova.writemesound.IRefreshable;
+import com.azharkova.writemesound.R;
 
 /**
  * Created by azharkova on 03.08.2015.

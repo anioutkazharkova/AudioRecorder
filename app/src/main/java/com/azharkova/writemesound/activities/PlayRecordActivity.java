@@ -1,4 +1,4 @@
-package com.azharkova.writemesound;
+package com.azharkova.writemesound.activities;
 
 import android.media.MediaPlayer;
 import android.media.audiofx.Visualizer;
@@ -14,11 +14,18 @@ import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.azharkova.writemesound.IRefreshable;
+import com.azharkova.writemesound.R;
+import com.azharkova.writemesound.fragments.RenameFileDialog;
+import com.azharkova.writemesound.VisualizerView;
+import com.azharkova.writemesound.fragments.MoveFileDialogFragment;
+import com.azharkova.writemesound.fragments.RemoveFileDialogFragment;
+
 import java.io.File;
 import java.io.IOException;
 
 
-public class PlayRecordActivity extends ActionBarActivity implements  IRefreshable {
+public class PlayRecordActivity extends ActionBarActivity implements IRefreshable {
 
     ImageView btnPlay;
     private SeekBar seekBar;

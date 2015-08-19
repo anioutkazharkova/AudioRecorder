@@ -1,4 +1,4 @@
-package com.azharkova.writemesound;
+package com.azharkova.writemesound.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +10,9 @@ import android.view.MenuItem;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.Toast;
+
+import com.azharkova.writemesound.R;
+import com.azharkova.writemesound.Utility;
 
 public class SortingActivity extends AppCompatActivity {
 SharedPreferences preferences;

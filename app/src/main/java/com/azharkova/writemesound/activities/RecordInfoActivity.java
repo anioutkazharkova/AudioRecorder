@@ -1,9 +1,11 @@
-package com.azharkova.writemesound;
+package com.azharkova.writemesound.activities;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.azharkova.writemesound.R;
 
 
 public class RecordInfoActivity extends ActionBarActivity {

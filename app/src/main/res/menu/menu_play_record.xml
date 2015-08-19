@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.azharkova.writemesound.PlayRecordActivity">
+    tools:context="com.azharkova.writemesound.activities.PlayRecordActivity">
     <item android:id="@+id/itemDelete" android:title="@string/delete"
      app:showAsAction="withText" />
     <item android:id="@+id/itemMove" android:title="@string/move"

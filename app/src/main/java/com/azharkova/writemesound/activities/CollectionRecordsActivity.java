@@ -1,10 +1,9 @@
-package com.azharkova.writemesound;
+package com.azharkova.writemesound.activities;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaMetadataRetriever;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,6 +12,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.azharkova.writemesound.IRecordCallback;
+import com.azharkova.writemesound.IRefreshable;
+import com.azharkova.writemesound.R;
+import com.azharkova.writemesound.data.RecordData;
+import com.azharkova.writemesound.adapters.RecordsAdapter;
+import com.azharkova.writemesound.Utility;
+import com.azharkova.writemesound.fragments.RecordDialogFragment;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,11 +27,11 @@ import java.util.Comparator;
 import java.util.List;
 
 
-public class CollectionRecordsActivity extends ActionBarActivity implements  IRecordCallback,IRefreshable{
+public class CollectionRecordsActivity extends ActionBarActivity implements IRecordCallback, IRefreshable {
 
     int sortOrder=0;
     private ListView listView;
-private  RecordsAdapter mAdapter;
+    private RecordsAdapter mAdapter;
     private ArrayList<File> files;
     String path="";
     private ArrayList<RecordData> records;

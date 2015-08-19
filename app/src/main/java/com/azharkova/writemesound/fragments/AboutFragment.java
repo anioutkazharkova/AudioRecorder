@@ -1,4 +1,4 @@
-package com.azharkova.writemesound;
+package com.azharkova.writemesound.fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;

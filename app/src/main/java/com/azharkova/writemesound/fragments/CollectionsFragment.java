@@ -1,12 +1,8 @@
-package com.azharkova.writemesound;
+package com.azharkova.writemesound.fragments;
 
 import android.app.Activity;
-import android.app.DialogFragment;
-import android.app.FragmentManager;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -16,6 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.azharkova.writemesound.data.CollectionEntity;
+import com.azharkova.writemesound.activities.CollectionRecordsActivity;
+import com.azharkova.writemesound.adapters.CollectionsAdapter;
+import com.azharkova.writemesound.activities.MainActivity;
+import com.azharkova.writemesound.R;
+import com.azharkova.writemesound.Utility;
 
 import java.io.File;
 import java.util.ArrayList;

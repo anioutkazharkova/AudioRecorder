@@ -1,4 +1,4 @@
-package com.azharkova.writemesound;
+package com.azharkova.writemesound.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,9 +7,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import com.azharkova.writemesound.data.CollectionEntity;
+import com.azharkova.writemesound.R;
 
-import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.List;
 

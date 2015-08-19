@@ -1,24 +1,20 @@
-package com.azharkova.writemesound;
+package com.azharkova.writemesound.fragments;
 
 import android.app.DialogFragment;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.media.MediaRecorder;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import com.azharkova.writemesound.data.FileManager;
+import com.azharkova.writemesound.IRefreshable;
+import com.azharkova.writemesound.R;
+import com.azharkova.writemesound.Utility;
 
 /**
  * Created by aniou_000 on 03.08.2015.

@@ -1,18 +1,17 @@
-package com.azharkova.writemesound;
+package com.azharkova.writemesound.fragments;
 
-import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.azharkova.writemesound.activities.CollectionRecordsActivity;
+import com.azharkova.writemesound.R;
+import com.azharkova.writemesound.Utility;
 
 import java.io.File;
 

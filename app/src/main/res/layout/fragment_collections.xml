@@ -1,7 +1,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.azharkova.writemesound.CollectionsFragment">
+    tools:context="com.azharkova.writemesound.fragments.CollectionsFragment">
 <ListView
     android:id="@+id/lvCollections"
     android:layout_width="match_parent"

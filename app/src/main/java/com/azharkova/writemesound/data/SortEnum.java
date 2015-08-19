@@ -1,4 +1,4 @@
-package com.azharkova.writemesound;
+package com.azharkova.writemesound.data;
 
 /**
  * Created by aniou_000 on 09.08.2015.

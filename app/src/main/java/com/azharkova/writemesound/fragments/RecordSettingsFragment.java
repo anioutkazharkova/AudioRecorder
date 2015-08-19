@@ -1,17 +1,17 @@
-package com.azharkova.writemesound;
+package com.azharkova.writemesound.fragments;
 
+import android.app.Activity;
 import android.app.DialogFragment;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.AudioFormat;
 import android.media.AudioRecord;
 import android.media.MediaRecorder;
-import android.preference.PreferenceManager;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,16 +21,20 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.azharkova.writemesound.activities.MainActivity;
+import com.azharkova.writemesound.data.PreferenceEntity;
+import com.azharkova.writemesound.R;
+import com.azharkova.writemesound.Utility;
+
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class RecordSettingsActivity extends ActionBarActivity implements IRefreshable {
-
+public class RecordSettingsFragment extends Fragment {
     List<PreferenceEntity> Channels=new ArrayList<PreferenceEntity>();
     List<PreferenceEntity> Encodings=new ArrayList<PreferenceEntity>();
     List<PreferenceEntity> Rates=new ArrayList<PreferenceEntity>();
-List<PreferenceEntity> Formats=new ArrayList<PreferenceEntity>();
+    List<PreferenceEntity> Formats=new ArrayList<PreferenceEntity>();
 
     PreferenceEntity selectedRate;
 
@@ -46,17 +50,17 @@ List<PreferenceEntity> Formats=new ArrayList<PreferenceEntity>();
     private TextView tvFormatValue;
     private SharedPreferences preferences;
     private int channel,rate,format;
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_record_settings);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        layout=(LinearLayout)findViewById(R.id.layout);
+        View view =inflater.inflate(R.layout.activity_record_settings,container,false);
+
+        setHasOptionsMenu(true);
+        layout=(LinearLayout)view.findViewById(R.id.layout);
 
         int[] channels = {1, 2};
 
-       int[] encodings = {AudioFormat.ENCODING_PCM_8BIT, AudioFormat.ENCODING_PCM_16BIT};
+        int[] encodings = {AudioFormat.ENCODING_PCM_8BIT, AudioFormat.ENCODING_PCM_16BIT};
         String[] encNames={"8bit","16bit"};
 
         int[] formats={MediaRecorder.OutputFormat.THREE_GPP,MediaRecorder.OutputFormat.MPEG_4,MediaRecorder.OutputFormat.AMR_NB,MediaRecorder.OutputFormat.AMR_WB};
@@ -83,7 +87,7 @@ List<PreferenceEntity> Formats=new ArrayList<PreferenceEntity>();
             PreferenceEntity c=new PreferenceEntity();
             c.Value=formats[i];
             c.Name=formatsNames[i];
-           Formats.add(c);
+            Formats.add(c);
 
         }
         Rates=new ArrayList<PreferenceEntity>(getRates());
@@ -93,13 +97,15 @@ List<PreferenceEntity> Formats=new ArrayList<PreferenceEntity>();
         layout.addView(getRateView());
 
         layout.addView(getFormatView());
-        preferences=getSharedPreferences(Utility.PREFERENCES, Context.MODE_PRIVATE);
+        preferences=getActivity().getSharedPreferences(Utility.PREFERENCES, Context.MODE_PRIVATE);
         loadPreferences();
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        return view;
     }
-
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        ((MainActivity) activity).onSectionAttached(3);
+    }
     private  void loadPreferences()
     {
 
@@ -115,9 +121,22 @@ List<PreferenceEntity> Formats=new ArrayList<PreferenceEntity>();
 
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId())
+        {
+            case R.id.itemDone:
+
+                savePreferences();
+                ((MainActivity)getActivity()).onNavigationDrawerItemSelected(0);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     View getChannelView()
     {
-        View channelView= LayoutInflater.from(this).inflate(R.layout.pref_item_layout, null);
+        View channelView= LayoutInflater.from(getActivity()).inflate(R.layout.pref_item_layout, null);
         tvChannelName=(TextView)channelView.findViewById(R.id.tvPrefName);
         tvChannelValue=(TextView)channelView.findViewById(R.id.tvPrefValue);
         tvChannelName.setText(R.string.channel_label);
@@ -127,7 +146,7 @@ List<PreferenceEntity> Formats=new ArrayList<PreferenceEntity>();
             @Override
             public void onClick(View view) {
                 ChannelDialogFragmet channelFragment = new ChannelDialogFragmet();
-                channelFragment.show(getFragmentManager(), "channel_dialog");
+                channelFragment.show(getActivity().getFragmentManager(), "channel_dialog");
             }
         });
 
@@ -136,7 +155,7 @@ List<PreferenceEntity> Formats=new ArrayList<PreferenceEntity>();
 
     View getRateView()
     {
-        View rateView= LayoutInflater.from(this).inflate(R.layout.pref_item_layout, null);
+        View rateView= LayoutInflater.from(getActivity()).inflate(R.layout.pref_item_layout, null);
         tvRateName=(TextView)rateView.findViewById(R.id.tvPrefName);
         tvRateValue=(TextView)rateView.findViewById(R.id.tvPrefValue);
         tvRateName.setText(R.string.bitrate_label);
@@ -146,15 +165,15 @@ List<PreferenceEntity> Formats=new ArrayList<PreferenceEntity>();
             @Override
             public void onClick(View view) {
                 RateDialogFragment rateDialogFragment=new RateDialogFragment();
-                rateDialogFragment.show(getFragmentManager(),"rate_dialog");
+                rateDialogFragment.show(getActivity().getFragmentManager(),"rate_dialog");
 
             }
         });
         return  rateView;
     }
     View getFormatView()
-    {  View formatView= LayoutInflater.from(this).inflate(R.layout.pref_item_layout, null);
-       tvFormatName=(TextView)formatView.findViewById(R.id.tvPrefName);
+    {  View formatView= LayoutInflater.from(getActivity()).inflate(R.layout.pref_item_layout, null);
+        tvFormatName=(TextView)formatView.findViewById(R.id.tvPrefName);
         tvFormatValue=(TextView)formatView.findViewById(R.id.tvPrefValue);
         tvFormatName.setText(R.string.audio_format_label);
         tvFormatValue.setText(Formats.get(0).Name);
@@ -162,8 +181,8 @@ List<PreferenceEntity> Formats=new ArrayList<PreferenceEntity>();
         formatView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FormatDialogFragmet formatDialogFragmet=new FormatDialogFragmet();
-                formatDialogFragmet.show(getFragmentManager(),"format_dialog");
+                FormatDialogFragmet formatDialogFragmet = new FormatDialogFragmet();
+                formatDialogFragmet.show(getActivity().getFragmentManager(), "format_dialog");
             }
         });
 
@@ -172,36 +191,13 @@ List<PreferenceEntity> Formats=new ArrayList<PreferenceEntity>();
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_record_settings, menu);
-        return true;
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_record_settings, menu);
+        super.onCreateOptionsMenu(menu, inflater);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-
-switch(item.getItemId())
-{
-    case android.R.id.home:
-        finish();
-        break;
-    case R.id.itemDone:
-
-        savePreferences();
-        Intent dataIntent=new Intent();
-
-        setResult(RESULT_OK, dataIntent);
-        finish();
-        break;
-}
 
 
-        return super.onOptionsItemSelected(item);
-    }
 
     private void savePreferences() {
 
@@ -327,8 +323,5 @@ switch(item.getItemId())
             return view;
         }
     }
-    @Override
-    public void refresh() {
 
-    }
 }

@@ -1,7 +1,6 @@
-package com.azharkova.writemesound;
+package com.azharkova.writemesound.adapters;
 
 import android.content.Context;
-import android.media.MediaMetadataRetriever;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +8,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import com.azharkova.writemesound.IRecordCallback;
+import com.azharkova.writemesound.R;
+import com.azharkova.writemesound.data.RecordData;
 
 import java.util.ArrayList;
 import java.util.List;
